@@ -47,7 +47,7 @@ class MovieController extends Controller
             'id', 'judul', 'category_id', 'sinopsis', 'tahun', 'pemain'
         ]), ['foto_sampul' => $fileName]));
 
-        return redirect()->route('home')->with('success', 'Data berhasil disimpan');
+        return redirect('/')->with('success', 'Data berhasil disimpan');
     }
 
     public function data()
@@ -80,7 +80,7 @@ class MovieController extends Controller
 
         $movie->update($data);
 
-        return redirect()->route('movies.data')->with('success', 'Data berhasil diperbarui');
+        return redirect('/movies/data')->with('success', 'Data berhasil diperbarui');
     }
 
     public function delete($id)
@@ -93,7 +93,7 @@ class MovieController extends Controller
 
         $movie->delete();
 
-        return redirect()->route('movies.data')->with('success', 'Data berhasil dihapus');
+        return redirect('/movies/data')->with('success', 'Data berhasil dihapus');
     }
 
     // =====================
